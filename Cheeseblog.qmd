@@ -3,3 +3,13 @@ title: "Cheeseblog"
 format: html
 ---
 
+```{r}
+
+library(maps)
+library(tidyverse)
+tuesdata <- tidytuesdayR::tt_load(2024, week = 23)
+
+cheeses <- tuesdata$cheeses
+```
+
+# Introduction 
