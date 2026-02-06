@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/cheeseblog2/index.html",
+    "href": "posts/cheeseblog2/index.html",
+    "title": "Fat Content and Cheese Characteristics🧀",
+    "section": "",
+    "text": "library(maps)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   4.0.0     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\n✖ purrr::map()    masks maps::map()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ntuesdata &lt;- tidytuesdayR::tt_load(2024, week = 23)\n\n---- Compiling #TidyTuesday Information for 2024-06-04 ----\n--- There is 1 file available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 1: \"cheeses.csv\"\n\ncheeses &lt;- tuesdata$cheeses\n\ncheese_clean = cheeses|&gt;\n  filter(!is.na(fat_content))"
+  },
+  {
+    "objectID": "posts/cheeseblog2/index.html#research-question",
+    "href": "posts/cheeseblog2/index.html#research-question",
+    "title": "Fat Content and Cheese Characteristics🧀",
+    "section": "Research Question",
+    "text": "Research Question\nIs fat content associated with different types of cheese, and how does texture help explain this differences?\n#1. Fat Content Categories Across Common Cheese Types\n\nfat_count = cheese_clean |&gt;\n  group_by(fat_content) |&gt;\n  summarise(n=n()) |&gt;\n  arrange(desc(n))|&gt;\n  slice(1:8)\n\ncheese_fat = cheese_clean|&gt;\n  left_join(fat_count,by = \"fat_content\") |&gt;\n  filter(!is.na(n))\n\ntype_count = cheese_fat |&gt;\n  group_by(type) |&gt;\n  summarise(n_type = n()) |&gt;\n  arrange(desc(n_type))|&gt;\n  slice(1:8)\n\ncheese_fat2 = cheese_fat|&gt;\n  inner_join(type_count,by = \"type\")\n\nggplot(cheese_fat2,\n       aes(x= type))+\n  geom_bar(fill = \"wheat3\") +\n  facet_wrap(~fat_content)+\n  coord_flip()+\n  labs(\n    title = \"Fat content categories across common cheese types\",\n    x = \"Cheese type\",\n    y = \"Number of cheeses\",\n  )+\n  theme_minimal() \n\n\n\n\n\n\n\n\nOur faceted bar chart shows the number of cheeeses by cheese type that fall under each fat content category, with each panel corresponding to a specific fat percentage. Because we have a common baseline, we can compare cheese types with same fat category.\nParticularly for fat content 45% and 50%, soft and semi soft cheeses were more frequent, meaning that higher fat cheeses are usually softer. In the other hand, hard cheeses and artisan hard are less consistent and concentrated in a specific category.\nLow fat cheeses are less common in our dataset and not evenly distributed across cheese types.\nMain takeaways from our visual aid, fat content varies across cheese types, softer cheese has a tendency to be high on fat. This visualization addresses my research question by exposing how common cheese types are disributed across different fat contents, allowing us to compare each fat level."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "DS334_blog_Valeria",
+    "section": "",
+    "text": "Fat Content and Cheese Characteristics🧀\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 28, 2026\n\n\nValeria Escrich\n\n\n\n\n\n\nNo matching items"
+  }
+]
