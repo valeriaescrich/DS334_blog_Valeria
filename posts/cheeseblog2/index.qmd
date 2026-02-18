@@ -2,6 +2,8 @@
 title: "Fat Content and Cheese Characteristics🧀"
 author: "Valeria Escrich"
 date: "2026-01-28"
+execute: 
+  eval: false
 categories: [news, code, analysis]
 image: "image.jpg"
 ---
