@@ -1,5 +1,5 @@
 ---
-title: "Blogs Made By Valeria"
+title: "Data Visualization: Blogs Written by Valeria😁"
 listing:
   contents: posts
   sort: "date desc"
