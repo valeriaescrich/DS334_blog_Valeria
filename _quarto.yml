@@ -3,16 +3,18 @@ project:
   output-dir: docs
 
 website:
-  title: "Data Visualizations of Stuff I am Interested In"
+  title: "Blogs of Stuff I am Interested In"
   navbar:
     right:
       - about.qmd
       - icon: github
         href: https://github.com/valeriaescrich
+      - icon: linkedin
+        href: https://www.linkedin.com/in/valeriaescrich/
 format:
   html:
     theme:
-      - cosmo
+      - quartz
       - brand
     css: styles.css
 

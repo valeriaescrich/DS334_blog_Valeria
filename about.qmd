@@ -1,5 +1,5 @@
 ---
-title: "Extra info!"
+title: "Extra info about me!"
 image: headshot.jpeg
 about:
   template: jolla
@@ -13,4 +13,4 @@ about:
       href: https://github.com/valeriaescrich
 ---
 
-This blog contains visualizations ana anaylisis of data sets I am interested in. My main goal is to make each blog easy to understand specially for those with no previous knowledge in Data Science. I want it to be a fun and memorable experience for my audience😁
+This blog contains visualizations and analysis of data sets I am interested in. My main goal is to make each blog easy to understand specially for those with no previous knowledge in Data Science. I want it to be a fun and memorable experience for my audience😁

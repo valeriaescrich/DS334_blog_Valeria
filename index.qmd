@@ -1,5 +1,5 @@
 ---
-title: "DS334_blog_Valeria"
+title: "Blogs Made By Valeria"
 listing:
   contents: posts
   sort: "date desc"
